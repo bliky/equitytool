@@ -1,0 +1,84 @@
+@import '../variables.less';
+@import '../mixins.less';
+
+.ld-navbar-wrapper {
+  height: @navbar-height;
+  line-height: @navbar-height;
+  background-color: #FFF;
+  //border-bottom: solid 1px #d1d5da;
+  //box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 1px 3px rgba(26,26,26,.1);
+ 
+  .vline {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 1px;
+    .hairline(left, #52575d);
+  }
+
+  .ld-btn {
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    min-width: 76px;
+    font-size: 16px;
+    border-radius: 14px;
+    text-align: center;
+    &.ld-btn-primary {
+      color: #fff;
+      background: @primary-color;
+    }
+  }
+
+  .ld-btn-hover {
+    &:hover {
+      color: @primary-color !important;
+    }
+  }
+
+  .ld-navbar {
+    color: @text-normal-color;
+    width: @page-width - 240px;
+    margin: 0 auto;
+    overflow: hidden;
+
+    .ld-navbar__lt {
+      height: @navbar-height;
+      line-height: @navbar-height;
+      float: left;
+    }
+    .ld-navbar__rt {
+      height: @navbar-height;
+      line-height: @navbar-height;
+      float: right;
+    }
+
+    a {
+      color: @text-normal-color;
+    }
+
+    ul.ld-navbar-list {
+      .ld-navbar-item {
+        float: left;
+        display: inline-block;
+        .ld-btn {
+          color: #FFF;
+        }
+        &+.ld-navbar-item {
+          margin-left: 50px;
+        }
+        a:not(.ld-btn):hover {
+          color: @text-hover-color;
+        }
+        a.active {
+          color: @primary-color;
+          &:hover {
+            color: @primary-color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import '../../components/variables.less';
+@import '../../components/mixins.less';
+
+@color-signal-default: #fff;
+@color-signal-level1: #7db8f6;
+@color-signal-level2: #0074f1;
+
+.ld-signalbars {
+  display: inline-block;
+  margin-left: 10px;
+  .ld-signalbar {
+    display: inline-block;
+    width: 4px;
+    border-radius: 2px;
+    border: 1px solid #0074f1;
+    background-color: @color-signal-default;
+    &+.ld-signalbar {
+      margin-left: 1px;
+    }
+    &.ld-signalbar1 {
+      height: 4px;
+    }
+    &.ld-signalbar2 {
+      height: 8px;
+    }
+    &.ld-signalbar3 {
+      height: 12px;
+    }
+  }
+  &.s1 {
+    .ld-signalbar1 {
+      background-color: @color-signal-level1;
+    }
+  }
+  &.s2 {
+    .ld-signalbar1 {
+      background-color: @color-signal-level2;
+    }
+  }
+  &.s3 {
+    .ld-signalbar1 {
+      background-color: @color-signal-level2;
+    }
+    .ld-signalbar2 {
+      background-color: @color-signal-level1;
+    }
+  }
+  &.s4 {
+    .ld-signalbar1 {
+      background-color: @color-signal-level2;
+    }
+    .ld-signalbar2 {
+      background-color: @color-signal-level2;
+    }
+  }
+  &.s5 {
+    .ld-signalbar1 {
+      background-color: @color-signal-level2;
+    }
+    .ld-signalbar2 {
+      background-color: @color-signal-level2;
+    }
+    .ld-signalbar3 {
+      background-color: @color-signal-level1;
+    }
+  }
+  &.s6 {
+    .ld-signalbar1 {
+      background-color: @color-signal-level2;
+    }
+    .ld-signalbar2 {
+      background-color: @color-signal-level2;
+    }
+    .ld-signalbar3 {
+      background-color: @color-signal-level2;
+    }
+  }
+}

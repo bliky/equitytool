@@ -1,0 +1,313 @@
+@import '../../components/variables.less';
+@import '../../components/mixins.less';
+
+.ld-plan-topbar {
+  height: 232px;
+  background-color: @color-bg-panel;
+  &.autoheight {
+    height: auto;
+    padding-bottom: 20px;
+    cursor: pointer;
+  }
+  .ld-main {
+    width: @main-width;
+    margin: 0 auto;
+    height: 100%;
+    .ld-box {
+      float: left;
+      width: 260px;
+      position: relative;
+      height: 100%;
+      &+.ld-box {
+        border-left: 1px solid #fff;
+      }
+      &.ld-box-lg {
+        width: 598px;
+      }
+    }
+
+    .ld-welcome {
+      position: absolute;
+      top: 10px;
+      left: 60px;
+      font-size: 12px;
+      color: @color-blue4;
+    }
+    .ld-data-panel {
+      .ld-t {
+        font-size: 14px;
+        color: @color-title;
+      }
+      .ld-b {
+        .ld-plot {
+          margin-top: 20px;
+          width: 92px;
+          height: 92px;
+          display: inline-block;
+        }
+        .ld-ano {
+          margin-top: 10px;
+          font-size: 12px;
+          color: @color-text;
+          .sbar {
+            width: 14px;
+            height: 8px;
+            display: inline-block;
+            margin-right: 6px;
+            &.red {
+               background-color: @color-red2;
+            }
+            &.blue {
+               background-color: @color-blue;
+            }
+          }
+        }
+      }
+      text-align: center;
+      margin-top: 40px;
+    }
+  }
+}
+
+.ld-pibar {
+  width: @main-width;
+  margin: 15px auto 0;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: @color-text-secondary;
+  .ld-l {
+    float: left;
+  }
+  .ld-r {
+    float: right;
+    .plustext {
+      color: @color-text-secondary;
+      cursor: pointer;
+      display: inline-block;
+      border: 1px dashed @color-text-secondary;
+      padding: 0 26px;
+      position: relative;
+      &:hover {
+        color: @color-blue2;
+        border-color: @color-blue2;
+      }
+      &:before {
+        display: inline-block;
+        content: '+';
+        position: absolute;
+        left: 26px;
+        top: 0;
+      }
+      &+.plustext {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.ld-plans {
+  width: @main-width;
+  margin: 0 auto 15px;
+}
+.ld-plan {
+  border-top: 2px solid @color-split;
+  height: 198px;
+  margin-top: 15px;
+  background-color: #fff;
+  //box-shadow: 1px 1px 6px rgba(82,87,93,.2);
+  position: relative;
+  cursor: pointer;
+  .mask {
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    color: #ccc;
+    .checked {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+    }
+  }
+  .unchecked {
+    display: none;
+    position: absolute;
+    color: #ccc;
+    right: 10px;
+    top: 10px;
+    &:hover {
+      color: #0074f1;
+    }
+  }
+  &:hover {
+    .mask {
+      display: block;
+    }
+    .unchecked {
+      display: block;
+    }
+  }
+  &.active {
+    .mask {
+      display: block;
+      background-color: rgba(0,116,241,.15);
+      color: #0074f1;
+    }
+  }
+  &.blue {
+    border-color: @color-blue3;
+  }
+  &.mini {
+    height: auto;
+    padding-bottom: 20px;
+  }
+  .ld-plan__hd {
+    padding: 0 15px;
+    font-size: 12px;
+    color: @color-blue3;
+    height: 50px;
+    line-height: 50px;
+    &.his {
+      color: @color-text-secondary;
+    }
+    .ld-icon {
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      margin-right: 8px;
+      width: 16px;
+      height: 16px;
+      background-repeat: no-repeat;
+      background-size: 16px 16px;
+      background-position: center;
+      &.ld-icon-plan-now {
+        background-image: url(../../assets/images/icon-plan-now.png);
+      }
+      &.ld-icon-plan-his {
+        background-image: url(../../assets/images/icon-plan-his.png);
+      }
+    }
+  }
+  .ld-plan__bd {
+    margin-top: 15px;
+    padding: 0 15px;
+    overflow: hidden;
+    height: 42px;
+    .ld-l {
+      float: left;
+      width: 45%;
+      font-size: 20px;
+      color: @color-title;
+      height: 42px;
+      line-height: 20px;
+    }
+    .ld-r {
+      float: left;
+      width: 50%;
+      margin-left: 5%;
+      font-size: 12px;
+      height: 36px;
+      line-height: 18px;
+      color: @color-text-secondary;
+    }
+  }
+  .ld-plan__ft {
+    margin-top: 20px;
+    .el-col + .el-col {
+      border-left: 1px solid @color-split;
+    }
+    .ld-plan-btn {
+      text-align: center;
+      font-size: 12px;
+      color: @color-text;
+      cursor: pointer;
+      .ld-icon {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        background-position: center;
+        transition: background-image .3s, transform .3s;
+        &.ld-icon-addgrant {
+          background-image: url(../../assets/images/icon-addgrant-color.png);
+        }
+        &.ld-icon-viewgrant {
+          background-image: url(../../assets/images/icon-plan-view-color.png);
+        }
+        &.ld-icon-del {
+          background-image: url(../../assets/images/icon-plan-del-color.png);
+        }
+      }
+      p {
+        color: @color-text;
+        .transition(color);
+        margin-top: 5px;
+      }
+      &:not(.disable):hover {
+        .ld-icon {
+          //.dotranform(scale(1.2));
+        }
+        p {
+          color: @color-primary;
+        }
+        .ld-icon-addgrant {
+          background-image: url(../../assets/images/icon-addgrant-hover.png);
+        }
+        .ld-icon-viewgrant {
+          background-image: url(../../assets/images/icon-plan-view-hover.png);
+        }
+        .ld-icon-del {
+          background-image: url(../../assets/images/icon-plan-del-hover.png);
+        }
+      }
+      &.disable {
+        cursor: not-allowed;
+        p {
+          color: @color-text-secondary;
+        }
+        .ld-icon-addgrant {
+          background-image: url(../../assets/images/icon-addgrant.png);
+        }
+        .ld-icon-viewgrant {
+          background-image: url(../../assets/images/icon-plan-view.png);
+        }
+        .ld-icon-del {
+          background-image: url(../../assets/images/icon-plan-del.png);
+        }
+      }
+    }
+  }
+}
+
+.ld-icon-hi {
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: center;
+  background-image: url(../../assets/images/icon-hi.png);
+}
+
+.ld-icon-arrowdowm {
+  display: inline-block;
+  width: 15px;
+  height: 17px;
+  background-size: 15px 17px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url(../../assets/images/arrow_down.png);
+}
+
+.ld-plan-table {
+  width: @main-width;
+  margin: 30px auto;
+  text-align: center;
+}
